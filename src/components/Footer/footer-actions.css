@@ -1,0 +1,45 @@
+.footer-actions-container {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-actions-radio-button-group {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.footer-actions-radio-button {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.footer-actions-clear-complete__button {
+  cursor: pointer;
+  color: white;
+  height: 30px;
+  margin: 5px;
+  padding: 0 10px;
+  border: none;
+  background-color: rgb(255, 67, 67);
+  transition: background-color 0.5s;
+}
+
+.footer-actions-clear-complete__button:hover{
+  background-color: rgb(255, 0, 0);
+}
+
+.footer-actions-done-all__button {
+  cursor: pointer;
+  color: white;
+  height: 30px;
+  border: none;
+  padding: 0 10px;
+  margin: 5px;
+  background-color: #086dd6;
+  transition: background-color 0.5s;
+}
+
+.footer-actions-done-all__button:hover {
+  background-color: #064e9b;
+}

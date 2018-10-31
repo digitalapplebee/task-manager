@@ -1,0 +1,14 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer-divider {
+  margin-bottom: 20px;
+}
+
+.footer-items-count{
+  align-self: center;
+}

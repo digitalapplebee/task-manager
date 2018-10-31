@@ -1,0 +1,1 @@
+Simple Task manager (CRUD) with React, Redux, Redux-persist.

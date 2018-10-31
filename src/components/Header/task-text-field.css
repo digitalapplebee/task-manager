@@ -1,0 +1,61 @@
+.task-text-field-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 15px;
+  margin: 10px 20%;
+}
+
+.task-text-field-container input[type=text] {
+  height: 30px;
+}
+
+.task-text-field-container .flex-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  
+}
+
+.task-text-field-container .flex-container>.flex-item {
+  width: 175px;
+  display: flex;
+  justify-content: left;
+}
+
+.task-text-field-container .flex-container > .raw-item {
+  width: 100%;
+}
+
+.task-text-field-container .button-submit-container {
+  display: flex;
+  justify-content: center;
+}
+
+.task-text-field-container .button-submit {
+  border: none;
+  background-color: rgb(6, 133, 135);
+  color: white;
+  font-size: 14px;
+  margin: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: background-color 0.5s;
+}
+
+.task-text-field-container .button-submit:hover {
+  background-color: rgb(0, 80, 82);
+}
+
+
+/* accordion styles */
+.task-text-field-button-more {
+  position: relative;
+  float: right;
+  bottom: 20px;
+  right: 20px; 
+}
+
+/* input date */
+.flex-container input[type="date"] {
+  height: 30px;
+}
