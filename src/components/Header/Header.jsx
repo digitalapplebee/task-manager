@@ -6,7 +6,10 @@ class Header extends Component {
     const { addTask } = this.props.actions
 
     return (
-      <TaskTextField onSubmit={(task_title, task_description, assignee, deadline) => addTask(task_title, task_description, assignee, deadline)} />
+      <TaskTextField 
+        onSubmit={(task_title, task_description, assignee, deadline) => 
+        addTask(task_title, task_description, assignee, deadline)}
+      />
     )
   }
 }

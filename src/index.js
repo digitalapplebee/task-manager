@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/es/integration/react'
 import configureStore from './store/configureStore'
 import TaskApp from './containers/TaskApp.jsx'
@@ -14,4 +14,4 @@ ReactDOM.render(
     </PersistGate>
   </Provider>,
   document.getElementById('root')
-);
+)

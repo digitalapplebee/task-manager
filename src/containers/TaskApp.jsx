@@ -11,7 +11,6 @@ import TaskList from '../components/Content/TaskList'
 import './task-app.css'
 
 const TaskApp = ({ tasks, actions }) => (
-  // <div className="app-container">
     <MuiThemeProvider>
       <div className="app-container">
         <div
@@ -25,8 +24,6 @@ const TaskApp = ({ tasks, actions }) => (
         </div>
       </div>
     </MuiThemeProvider>
-
-  // </div>
 )
 
 const mapStateToProps = ({ tasks }) => ({

@@ -14,8 +14,6 @@ class FooterActions extends Component {
 
     return (
       <div className="footer-actions-container">
-
-        {/* edit radiobutton */}
         <RadioButtonGroup
           name="filter"
           defaultSelected={currentFilter}
@@ -39,21 +37,18 @@ class FooterActions extends Component {
           />
 
         </RadioButtonGroup>
-
         <button
           onClick={handleRemoveCompleted}
           className="footer-actions-clear-complete__button"
         >
           Clear completed
         </button>
-
         <button
           onClick={handleCompleteAll}
           className="footer-actions-done-all__button"
         >
           Done all
         </button>
-
       </div>
     )
   }

@@ -22,7 +22,6 @@ class TaskRow extends Component {
 
     this.addActiveClass = this.addActiveClass.bind(this)
     this.handleEditing = this.handleEditing.bind(this)
-    // task.handleEditingDone = this.handleEditingDone.bind(this)
 
     this.handleChangeDescription = this.handleChangeDescription.bind(this)
     this.handleChangeAssignee = this.handleChangeAssignee.bind(this)
@@ -48,10 +47,6 @@ class TaskRow extends Component {
   }
 
   handleChangeDescription(event) {
-    //format date dd.mm.yyyy
-    // let date = event.target.value.split("").reverse().join("")
-    // this.setState({ description: date })
- 
     this.setState({ description: event.target.value })
   }
 
@@ -115,7 +110,9 @@ class TaskRow extends Component {
                   <span
                     style={viewStyle}
                     onDoubleClick={this.handleEditing}
-                  >[{task.assignee}]</span>
+                  >
+                    [{task.assignee}]
+                  </span>
                   <input
                     type="text"
                     onChange={this.handleChangeAssignee}
@@ -151,15 +148,6 @@ class TaskRow extends Component {
                     value={this.state.deadline}
                     style={editStyle}
                   />
-
-                  {/* old input type text for deadline */}
-                  {/* <input
-                    type="text"
-                    onChange={this.handleChangeDeadline}
-                    onKeyDown={this.handleEditingDone.bind(this)}
-                    value={this.state.deadline}
-                    style={editStyle}
-                  /> */}
                 </div>
               </div>
 

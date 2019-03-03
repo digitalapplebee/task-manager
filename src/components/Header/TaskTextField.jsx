@@ -85,12 +85,6 @@ class TaskTextField extends Component {
             onChange={this.handleChangeDeadline}
             className="raw-item"
           />
-          {/* <input type="text"
-            value={this.state.deadline}
-            placeholder="Input your task deadline here"
-            onChange={this.handleChangeDeadline}
-            className="raw-item"
-          /> */}
         </div>
 
         <div className="flex-container">
@@ -112,17 +106,6 @@ class TaskTextField extends Component {
             className="button-submit"
           >Add task</button>
         </div>
-        {/* { this.state.active ?
-          <button 
-            className="task-text-field-button-more"
-            onClick={this.addActiveClass}
-          >&uarr;</button>
-          :
-          <button 
-            className="task-text-field-button-more"
-            onClick={this.addActiveClass}
-          >&darr;</button>
-        } */}
       </div>
     )
   }
