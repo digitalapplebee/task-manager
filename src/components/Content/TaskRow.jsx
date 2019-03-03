@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import { NotificationContainer, NotificationManager } from 'react-notifications'
-
-import 'react-notifications/lib/notifications.css';
+import 'react-notifications/lib/notifications.css'
 import './task-row.css'
 
 class TaskRow extends Component {
   constructor(props) {
     super(props)
-
     const { task } = this.props;
 
     this.state = {
@@ -19,23 +17,13 @@ class TaskRow extends Component {
       deadline: task.deadline,
       description: task.task_description,
     }
-
-    this.addActiveClass = this.addActiveClass.bind(this)
-    this.handleEditing = this.handleEditing.bind(this)
-
-    this.handleChangeDescription = this.handleChangeDescription.bind(this)
-    this.handleChangeAssignee = this.handleChangeAssignee.bind(this)
-    this.handleChangeTitle = this.handleChangeTitle.bind(this)
-    this.handleChangeDeadline = this.handleChangeDeadline.bind(this)
-    this.handleDataSubmit = this.handleDataSubmit.bind(this)
   }
 
-
-  addActiveClass() {
+  addActiveClass = () => {
     this.setState( prevState => ({ active: !prevState.active }))
   }
 
-  handleEditing() {
+  handleEditing = () => {
     this.setState({ editing: true })
   }
 
@@ -46,24 +34,14 @@ class TaskRow extends Component {
     }
   }
 
-  handleChangeDescription(event) {
-    this.setState({ description: event.target.value })
+  changeInput = (type) => (event) => {
+    const { value } = event.target
+    this.setState({
+      [type]: value
+    })
   }
 
-  handleChangeDeadline(event) {
-
-    this.setState({ deadline: event.target.value })
-  }
-
-  handleChangeTitle(event) {
-    this.setState({ title: event.target.value })
-  }
-
-  handleChangeAssignee(e) {
-    this.setState({ assignee: e.target.value })
-  }
-
-  handleDataSubmit() {
+  handleDataSubmit = () => {
     this.props.handleEditTask(
       this.state.id,
       this.state.title,
@@ -91,15 +69,14 @@ class TaskRow extends Component {
       <div className="task-row-container">
         <div className="task-row-item">
           <div className="task-row-checkbox">
-
             <input
               type="checkbox"
               checked={task.completed}
               onChange={handleCompleteTask(task.task_id)}
             />
             <span className="chechmark"></span>
-
           </div>
+
           <div style={{ width: "100%" }}>
             <div
               className={this.state.active ? "accordion" : "accordion active"}
@@ -115,7 +92,7 @@ class TaskRow extends Component {
                   </span>
                   <input
                     type="text"
-                    onChange={this.handleChangeAssignee}
+                    onChange={this.changeInput('assignee')}
                     onKeyDown={this.handleEditingDone.bind(this)}
                     value={this.state.assignee}
                     style={editStyle}
@@ -126,10 +103,12 @@ class TaskRow extends Component {
                   <span
                     style={viewStyle}
                     onDoubleClick={this.handleEditing}
-                  >Task title: {task.task_title}</span>
+                  >
+                    Task title: {task.task_title}
+                  </span>
                   <input
                     type="text"
-                    onChange={this.handleChangeTitle}
+                    onChange={this.changeInput('title')}
                     onKeyDown={this.handleEditingDone.bind(this)}
                     value={this.state.title}
                     style={editStyle}
@@ -140,11 +119,13 @@ class TaskRow extends Component {
                   <span
                     style={viewStyle}
                     onDoubleClick={this.handleEditing}
-                  >Deadline: {task.deadline}</span>
+                  >
+                    Deadline: {task.deadline}
+                  </span>
                   <input
                     type="date"
                     onChange={this.handleChangeDeadline}
-                    onKeyDown={this.handleEditingDone.bind(this)}
+                    onKeyDown={this.changeInput('deadline')}
                     value={this.state.deadline}
                     style={editStyle}
                   />
@@ -156,23 +137,31 @@ class TaskRow extends Component {
               <textarea
                 className="description"
                 value={this.state.description}
-                onChange={this.handleChangeDescription}
+                onChange={this.changeInput('description')}
               >
               </textarea>
               <button
                 onClick={this.handleDataSubmit}
                 className="task-row-description-save__button"
-              >Save description</button>
+              >
+                Save description
+              </button>
             </div>
           </div>
           {this.state.active ?
-            <button onClick={this.addActiveClass} className="accordion up-down-arrow">
+            <button 
+              onClick={this.addActiveClass}
+              className="accordion up-down-arrow"
+            >
               &uarr;
-          </button>
+            </button>
             :
-            <button onClick={this.addActiveClass} className="accordion up-down-arrow">
+            <button
+              onClick={this.addActiveClass}
+              className="accordion up-down-arrow"
+            >
               &darr;
-          </button>
+            </button>
           }
         </div>
         <button
@@ -180,7 +169,7 @@ class TaskRow extends Component {
           className="task-row-remove-button"
         >
           &#x0078;
-              </button>
+        </button>
         <NotificationContainer />
       </div>
     )

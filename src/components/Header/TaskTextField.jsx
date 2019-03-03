@@ -1,55 +1,29 @@
 import React, { Component } from 'react'
-
-
 import './task-text-field.css'
 
 class TaskTextField extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      assignee: '',
-      title: '',
-      deadline: '',
-      description: '',
-      value: '',
-      active: true,
-    }
+  state = {
+  assignee: '',
+  title: '',
+  deadline: '',
+  description: '',
+  value: '',
+}
 
-    this.handleChangeAssignee = this.handleChangeAssignee.bind(this)
-    this.handleChangeTitle = this.handleChangeTitle.bind(this)
-    this.handleChangeDeadline = this.handleChangeDeadline.bind(this)
-    this.handleChangeDescription = this.handleChangeDescription.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.addActiveClass = this.addActiveClass.bind(this)
+  changeInput = (type) => (event) => {
+    const { value } = event.target
+    this.setState({
+      [type]: value
+    })
   }
 
-  handleChangeTitle(event) {
-    this.setState({ title: event.target.value })
-  }
-
-  handleChangeAssignee(event) {
-    this.setState({ assignee: event.target.value })
-  }
-
-  handleChangeDescription(event) {
-    this.setState({ description: event.target.value })
-  }
-
-  handleChangeDeadline(event) {
-    this.setState({ deadline: event.target.value })
-  }
-
-  handleSubmit() {
+  handleSubmit = () => {
     this.props.onSubmit(
       this.state.title,
       this.state.description,
       this.state.assignee,
       this.state.deadline)
     this.setState({ assignee: '', title: '', description: '', deadline: '', })
-  }
-
-  addActiveClass() {
-    this.setState({ active: !this.state.active })
   }
 
   render() {
@@ -61,7 +35,7 @@ class TaskTextField extends Component {
             type="text"
             value={this.state.assignee}
             placeholder="Input your task assignee here"
-            onChange={this.handleChangeAssignee}
+            onChange={this.changeInput('assignee')}
             className="raw-item"
           />
         </div>
@@ -72,7 +46,7 @@ class TaskTextField extends Component {
             type="text"
             placeholder="Input your task title here"
             value={this.state.title}
-            onChange={this.handleChangeTitle}
+            onChange={this.changeInput('title')}
             className="raw-item"
           />
         </div>
@@ -82,7 +56,7 @@ class TaskTextField extends Component {
           <input 
             type="date"
             value={this.state.deadline}
-            onChange={this.handleChangeDeadline}
+            onChange={this.changeInput('deadline')}
             className="raw-item"
           />
         </div>
@@ -94,7 +68,7 @@ class TaskTextField extends Component {
             rows="5"
             value={this.state.description}
             placeholder="Input your task description here"
-            onChange={this.handleChangeDescription}
+            onChange={this.changeInput('description')}
             className="raw-item"
           >
           </textarea>
@@ -104,7 +78,9 @@ class TaskTextField extends Component {
           <button
             onClick={this.handleSubmit}
             className="button-submit"
-          >Add task</button>
+          >
+            Add task
+          </button>
         </div>
       </div>
     )

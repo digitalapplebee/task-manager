@@ -3,8 +3,15 @@ import FooterActions from './FooterActions'
 
 import './footer.css'
 
-const Footer = ({ tasks, currentFilter, handleFilter, handleRemoveCompleted, handleCompleteAll }) => {
-  const leftTasks = tasks.reduce((count, { completed }) => completed ? count : count + 1, 0)
+const Footer = ({ 
+  tasks,
+  currentFilter,
+  handleFilter,
+  handleRemoveCompleted,
+  handleCompleteAll }) => {
+
+  const leftTasks = tasks.reduce((count, { completed }) => 
+  completed ? count : count + 1, 0)
 
   return (
     <React.Fragment>
