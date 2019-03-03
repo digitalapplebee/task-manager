@@ -19,13 +19,9 @@ class TaskRow extends Component {
     }
   }
 
-  addActiveClass = () => {
-    this.setState( prevState => ({ active: !prevState.active }))
-  }
+  addActiveClass = () => this.setState( prevState => ({ active: !prevState.active }))
 
-  handleEditing = () => {
-    this.setState({ editing: true })
-  }
+  handleEditing = () => this.setState({ editing: true })
 
   handleEditingDone(event) {
     if (event.keyCode === 13) {
@@ -55,6 +51,13 @@ class TaskRow extends Component {
 
   render() {
     const { task, handleRemoveTask, handleCompleteTask } = this.props
+    const {
+      active,
+      assignee,
+      title,
+      deadline,
+      description,
+    } = this.state
 
     let viewStyle = {}
     let editStyle = {}
@@ -79,7 +82,7 @@ class TaskRow extends Component {
 
           <div style={{ width: "100%" }}>
             <div
-              className={this.state.active ? "accordion" : "accordion active"}
+              className={active ? "accordion" : "accordion active"}
               style={task.completed ? styles.completed : styles.notCompleted}
             >
               <div className="task-row-container-items">
@@ -94,7 +97,7 @@ class TaskRow extends Component {
                     type="text"
                     onChange={this.changeInput('assignee')}
                     onKeyDown={this.handleEditingDone.bind(this)}
-                    value={this.state.assignee}
+                    value={assignee}
                     style={editStyle}
                   />
 
@@ -110,7 +113,7 @@ class TaskRow extends Component {
                     type="text"
                     onChange={this.changeInput('title')}
                     onKeyDown={this.handleEditingDone.bind(this)}
-                    value={this.state.title}
+                    value={title}
                     style={editStyle}
                   />
                 </div>
@@ -126,17 +129,17 @@ class TaskRow extends Component {
                     type="date"
                     onChange={this.handleChangeDeadline}
                     onKeyDown={this.changeInput('deadline')}
-                    value={this.state.deadline}
+                    value={deadline}
                     style={editStyle}
                   />
                 </div>
               </div>
 
             </div>
-            <div className={this.state.active ? "panel panelNotActive" : "panel panelActive"}>
+            <div className={active ? "panel panelNotActive" : "panel panelActive"}>
               <textarea
                 className="description"
-                value={this.state.description}
+                value={description}
                 onChange={this.changeInput('description')}
               >
               </textarea>
@@ -148,7 +151,7 @@ class TaskRow extends Component {
               </button>
             </div>
           </div>
-          {this.state.active ?
+          {active ?
             <button 
               onClick={this.addActiveClass}
               className="accordion up-down-arrow"
