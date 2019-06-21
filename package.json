@@ -1,6 +1,6 @@
 {
   "name": "task-manager",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "dependencies": {
     "material-ui": "^0.20.2",
     "prop-types": "^15.6.2",
@@ -12,7 +12,7 @@
     "redux": "^3.6.0"
   },
   "devDependencies": {
-    "react-scripts": "^2.1.5",
+    "react-scripts": "^3.0.1",
     "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0"
   },
