@@ -6,7 +6,8 @@ import './task-row.css'
 class TaskRow extends Component {
   constructor(props) {
     super(props)
-    const { task } = this.props;
+
+    const { task } = this.props
 
     this.state = {
       active: false,
@@ -23,14 +24,14 @@ class TaskRow extends Component {
 
   handleEditing = () => this.setState({ editing: true })
 
-  handleEditingDone(event) {
+  handleEditingDone = event => {
     if (event.keyCode === 13) {
       this.setState({ editing: false })
       this.handleDataSubmit()
     }
   }
 
-  changeInput = (type) => (event) => {
+  changeInput = type => event => {
     const { value } = event.target
     this.setState({
       [type]: value
@@ -97,7 +98,7 @@ class TaskRow extends Component {
                   <input
                     type="text"
                     onChange={this.changeInput('assignee')}
-                    onKeyDown={this.handleEditingDone.bind(this)}
+                    onKeyDown={this.handleEditingDone}
                     value={assignee}
                     style={editStyle}
                   />
@@ -113,7 +114,7 @@ class TaskRow extends Component {
                   <input
                     type="text"
                     onChange={this.changeInput('title')}
-                    onKeyDown={this.handleEditingDone.bind(this)}
+                    onKeyDown={this.handleEditingDone}
                     value={title}
                     style={editStyle}
                     />
@@ -128,9 +129,10 @@ class TaskRow extends Component {
                   </span>
                   <input
                     type="date"
-                    onKeyDown={this.handleEditingDone.bind(this)}
+                    onKeyDown={this.handleEditingDone}
                     onChange={this.changeInput('deadline')}
                     value={deadline}
+                    valuedefault={deadline}
                     style={editStyle}
                   />
                 </div>
