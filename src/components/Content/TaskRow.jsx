@@ -38,12 +38,13 @@ class TaskRow extends Component {
   }
 
   handleDataSubmit = () => {
+    const { id, title, description, assignee, deadline } = this.state
     this.props.handleEditTask(
-      this.state.id,
-      this.state.title,
-      this.state.description,
-      this.state.assignee,
-      this.state.deadline,
+      id,
+      title,
+      description,
+      assignee,
+      deadline,
     )
 
     NotificationManager.success('Data updated', 'Done');
@@ -115,7 +116,7 @@ class TaskRow extends Component {
                     onKeyDown={this.handleEditingDone.bind(this)}
                     value={title}
                     style={editStyle}
-                  />
+                    />
                 </div>
 
                 <div>
@@ -127,8 +128,8 @@ class TaskRow extends Component {
                   </span>
                   <input
                     type="date"
-                    onChange={this.handleChangeDeadline}
-                    onKeyDown={this.changeInput('deadline')}
+                    onKeyDown={this.handleEditingDone.bind(this)}
+                    onChange={this.changeInput('deadline')}
                     value={deadline}
                     style={editStyle}
                   />

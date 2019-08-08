@@ -7,7 +7,6 @@ class TaskTextField extends Component {
   title: '',
   deadline: '',
   description: '',
-  value: '',
 }
 
   changeInput = (type) => (event) => {
@@ -27,13 +26,15 @@ class TaskTextField extends Component {
   }
 
   render() {
+    const { assignee, title, deadline, description } = this.state
+
     return (
       <div className="task-text-field-container">
         <div className="flex-container">
           <p className="flex-item">Assignee:</p>
           <input
             type="text"
-            value={this.state.assignee}
+            value={assignee}
             placeholder="Input your task assignee here"
             onChange={this.changeInput('assignee')}
             className="raw-item"
@@ -45,7 +46,7 @@ class TaskTextField extends Component {
           <input
             type="text"
             placeholder="Input your task title here"
-            value={this.state.title}
+            value={title}
             onChange={this.changeInput('title')}
             className="raw-item"
           />
@@ -55,7 +56,7 @@ class TaskTextField extends Component {
           <p className="flex-item">Deadline:</p>
           <input 
             type="date"
-            value={this.state.deadline}
+            value={deadline}
             onChange={this.changeInput('deadline')}
             className="raw-item"
           />
@@ -66,7 +67,7 @@ class TaskTextField extends Component {
           <textarea
             cols="30"
             rows="5"
-            value={this.state.description}
+            value={description}
             placeholder="Input your task description here"
             onChange={this.changeInput('description')}
             className="raw-item"
