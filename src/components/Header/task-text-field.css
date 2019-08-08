@@ -4,24 +4,28 @@
   margin: 10px 20%;
 }
 
-.task-text-field-container input[type=text] {
+.task-text-field-container input[type="text"] {
   height: 30px;
+  background: #ecf0f1;
+}
+
+.task-text-field-container textarea {
+  background: #ecf0f1;
 }
 
 .task-text-field-container .flex-container {
   display: flex;
   justify-content: left;
   align-items: center;
-
 }
 
-.task-text-field-container .flex-container>.flex-item {
+.task-text-field-container .flex-container > .flex-item {
   width: 175px;
   display: flex;
   justify-content: left;
 }
 
-.task-text-field-container .flex-container>.raw-item {
+.task-text-field-container .flex-container > .raw-item {
   width: 100%;
 }
 
@@ -57,4 +61,44 @@
 /* input date */
 .flex-container input[type="date"] {
   height: 30px;
+}
+
+/* date calendar */
+
+/* Removes the clear button from date inputs */
+.flex-container input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+/* Removes the spin button */
+.flex-container input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+/* Always display the drop down caret */
+.flex-container input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #2c3e50;
+}
+
+/* A few custom styles for date inputs */
+.flex-container input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  color: #95a5a6;
+  font-family: "Helvetica", arial, sans-serif;
+  font-size: 18px;
+  border: 1px solid #ecf0f1;
+  background: #ecf0f1;
+  padding: 5px;
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+.flex-container input[type="date"],
+focus {
+  color: #95a5a6;
+  border: 1px solid rgb(169, 169, 169);
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
 }
