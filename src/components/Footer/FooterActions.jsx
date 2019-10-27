@@ -1,8 +1,13 @@
-import React from 'react'
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
-import './footer-actions.css'
+import React from "react"
+import { RadioButton, RadioButtonGroup } from "material-ui/RadioButton"
+import "./footer-actions.css"
 
-const FooterActions = ({ currentFilter, handleFilter, handleRemoveCompleted, handleCompleteAll }) => (
+const FooterActions = ({
+  currentFilter,
+  handleFilter,
+  handleRemoveCompleted,
+  handleCompleteAll
+}) => (
   <div className="footer-actions-container">
     <RadioButtonGroup
       name="filter"
@@ -25,7 +30,6 @@ const FooterActions = ({ currentFilter, handleFilter, handleRemoveCompleted, han
         value="completed"
         className="footer-actions-radio-button"
       />
-
     </RadioButtonGroup>
     <button
       onClick={handleRemoveCompleted}

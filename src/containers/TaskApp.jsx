@@ -1,33 +1,28 @@
-import React from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import * as taskActions from '../actions/tasks'
+import React from "react"
+import { bindActionCreators } from "redux"
+import { connect } from "react-redux"
+import * as taskActions from "../actions/tasks"
 
-import { MuiThemeProvider } from 'material-ui/styles'
+import { MuiThemeProvider } from "material-ui/styles"
 
-import Header from '../components/Header/Header'
-import TaskList from '../components/Content/TaskList'
+import Header from "../components/Header/Header"
+import TaskList from "../components/Content/TaskList"
 
-import './task-app.css'
+import "./task-app.css"
 
 const TaskApp = ({ tasks, actions }) => (
-    <MuiThemeProvider>
-      <div className="app-container">
-        <div
-          className="app-content"
-        >
-          <Header actions={actions} />
-          <TaskList
-            tasks={tasks}
-            actions={actions}
-          />
-        </div>
+  <MuiThemeProvider>
+    <div className="app-container">
+      <div className="app-content">
+        <Header actions={actions} />
+        <TaskList tasks={tasks} actions={actions} />
       </div>
-    </MuiThemeProvider>
+    </div>
+  </MuiThemeProvider>
 )
 
 const mapStateToProps = ({ tasks }) => ({
-  tasks,
+  tasks
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -36,5 +31,5 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(TaskApp)

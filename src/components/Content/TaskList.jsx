@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import TaskRow from './TaskRow'
-import Footer from '../Footer/Footer'
-import './task-list.css'
+import React, { Component } from "react"
+import TaskRow from "./TaskRow"
+import Footer from "../Footer/Footer"
+import "./task-list.css"
 
 class TaskList extends Component {
   state = {
-    currentFilter: 'all',
+    currentFilter: "all"
   }
 
   handleCompleteTask(task_id) {
@@ -18,7 +18,7 @@ class TaskList extends Component {
 
   handleFilter(filter) {
     this.setState({
-      currentFilter: filter,
+      currentFilter: filter
     })
   }
 
@@ -31,9 +31,14 @@ class TaskList extends Component {
   }
 
   handleEditTask(task_id, task_title, task_description, assignee, deadline) {
-    this.props.actions.editTask(task_id, task_title, task_description, assignee, deadline)
+    this.props.actions.editTask(
+      task_id,
+      task_title,
+      task_description,
+      assignee,
+      deadline
+    )
   }
-
 
   render() {
     const { tasks } = this.props
@@ -41,9 +46,9 @@ class TaskList extends Component {
 
     const filteredTasks = tasks.filter(({ completed }) => {
       switch (currentFilter) {
-        case 'completed':
+        case "completed":
           return completed
-        case 'active':
+        case "active":
           return !completed
         default:
           return true
@@ -53,7 +58,7 @@ class TaskList extends Component {
     return (
       <div>
         <div className="task-list-container">
-          {filteredTasks.map(task =>
+          {filteredTasks.map(task => (
             <TaskRow
               key={task.task_id}
               task={task}
@@ -61,7 +66,7 @@ class TaskList extends Component {
               handleCompleteTask={this.handleCompleteTask.bind(this)}
               handleRemoveTask={this.handleRemoveTask.bind(this)}
             />
-          )}
+          ))}
         </div>
         <Footer
           tasks={tasks}

@@ -53,7 +53,7 @@
 }
 
 .panel {
-  margin-top: 5px; 
+  margin-top: 5px;
   background-color: white;
   max-height: 0;
   overflow: hidden;
@@ -86,10 +86,9 @@
   transition: background-color 0.5s;
 }
 
-.task-row-description-save__button:hover{
+.task-row-description-save__button:hover {
   background-color: #064e9b;
 }
-
 
 /******************************************/
 
@@ -121,7 +120,6 @@
 .task-row-item {
   display: grid;
   grid-template-columns: 30px 1fr 40px;
-
 }
 
 /* input styles */
