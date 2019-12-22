@@ -73,6 +73,7 @@
 .description {
   height: 100px;
   width: 99%;
+  resize: none;
 }
 
 .task-row-description-save__button {

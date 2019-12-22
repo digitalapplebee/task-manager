@@ -27,6 +27,13 @@
 
 .task-text-field-container .flex-container > .raw-item {
   width: 100%;
+  resize: none;
+  padding-left: 5px;
+}
+
+.task-text-field-container .flex-container > .raw-item::placeholder {
+  font-size: 13px;
+  font-family: monospace;
 }
 
 .task-text-field-container .button-submit-container {
