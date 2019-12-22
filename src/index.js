@@ -3,7 +3,7 @@ import ReactDOM from "react-dom"
 import { Provider } from "react-redux"
 import { PersistGate } from "redux-persist/es/integration/react"
 import configureStore from "./store/configureStore"
-import TaskApp from "./containers/TaskApp.jsx"
+import TaskApp from "./containers/TaskApp"
 
 const { persistor, store } = configureStore()
 

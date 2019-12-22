@@ -1,12 +1,12 @@
 import React from "react"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
-import * as taskActions from "../actions/tasks"
+import * as taskActions from "../../actions/tasks"
 
 import { MuiThemeProvider } from "material-ui/styles"
 
-import Header from "../components/Header/Header"
-import TaskList from "../components/Content/TaskList"
+import Header from "../../components/Header"
+import TaskList from "../../components/Content/TaskList"
 
 import "./task-app.css"
 

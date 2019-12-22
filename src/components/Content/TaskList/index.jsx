@@ -1,6 +1,6 @@
 import React, { Component } from "react"
-import TaskRow from "./TaskRow"
-import Footer from "../Footer/Footer"
+import TaskRow from "../TaskRow"
+import Footer from "../../Footer"
 import "./task-list.css"
 
 class TaskList extends Component {
