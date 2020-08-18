@@ -2,6 +2,7 @@
   "name": "task-manager",
   "version": "0.9.7",
   "dependencies": {
+    "dot-prop": "^5.2.0",
     "handlebars": "^4.5.3",
     "material-ui": "^0.20.2",
     "mixin-deep": "^2.0.1",
