@@ -3,7 +3,7 @@
   "version": "0.9.7",
   "dependencies": {
     "dot-prop": "^5.2.0",
-    "handlebars": "^4.5.3",
+    "handlebars": "^4.7.6",
     "material-ui": "^0.20.2",
     "mixin-deep": "^2.0.1",
     "prop-types": "^15.6.2",
