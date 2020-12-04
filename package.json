@@ -1,23 +1,18 @@
 {
   "name": "task-manager",
-  "version": "0.9.7",
+  "version": "0.9.8",
   "dependencies": {
-    "dot-prop": "^5.2.0",
     "material-ui": "^0.20.2",
     "mixin-deep": "^2.0.1",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "rc-calendar": "^9.7.10",
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-notifications": "^1.4.3",
     "react-redux": "^4.4.9",
-    "redux": "^3.6.0",
-    "set-value": "^3.0.1",
-    "yargs-parser": "^19.0.4"
+    "redux": "^3.6.0"
   },
   "devDependencies": {
-    "handlebars": "^4.5.3",
-    "lodash.merge": "^4.6.2",
     "react-scripts": "^3.3.0",
     "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0"
